@@ -126,7 +126,9 @@ export const requestResetToken = async (email) => {
   const template = handlebars.compile(templateSource);
   const html = template({
     name: user.name,
-    link: `${env('APP_DOMAIN')}/reset-password?token=${resetToken}`,
+    link: `https://${env('APP_DOMAIN')}/reset-password?token=${resetToken}`,
+    //https://<your-frontend-domain>/reset-password?token=<jwt-token>
+
     // link: `${process.env.APP_DOMAIN}/reset-password?token=${resetToken}`,
   });
 
