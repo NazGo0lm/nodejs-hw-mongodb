@@ -22,6 +22,7 @@ const usersSchema = new Schema(
   },
 );
 
+
 usersSchema.methods.toJSON = function () {
   const obj = this.toObject();
   delete obj.password;
